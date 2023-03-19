@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { Product } from 'src/models/Product.model';
-import { ApiService } from 'src/services/api.service';
+import { ApiService } from 'src/api.service';
 
 @Component({
   selector: 'app-description',

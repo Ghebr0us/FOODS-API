@@ -1,14 +1,12 @@
-<div *ngIf="item">
-  <div class="card">
-    <p>
-      <img src="{{ item.image_front_url}}">
-  </p>
-    <div class="card-body">
-      <h5 class="card-title">
-        <a href="javascipt:void(0)" [routerLink]="['/product', item.id]">
-          {{item.product_name}}
-        </a>
-      </h5>
-    </div>
+<div class="container">
+  <div *ngIf="product">
+      <h4>{{product.product.product_name}}</h4>
+      <img src="{{product.product.image_front_url}}">
+
+      <p> <b>Brand:</b> {{product.product.brands_tags[0]}} </p>
+      <p> <b>Categorie:</b> {{product.product.categories}} </p>
+
+      
+      <p><a href (click)="back()">Back</a></p>
   </div>
 </div>

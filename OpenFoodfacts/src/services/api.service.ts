@@ -7,18 +7,13 @@ import { ProductData } from 'src/models/ProductData.model';
 })
 export class ApiService {
   private baseURL: string = 'https://world.openfoodfacts.org/cgi';
-  private pageSize: number = 30;
+  private pageSize: number = 30; //questo valore cambia il numero di dati mostrati
 
   constructor(
     private http: HttpClient
   ) { }
 
-  /**
-   * Restituisce tutti i prodotti coerenti con il termine di ricerca dato
-   * @param {string} query - Termine di ricerca
-   * @returns Observable<ArtistsData>
-   */
-  public products(query: string): Observable<any> {
+  public products(query: string): Observable<any> {        //questo cerca il prodotto(searchProduct da porta)
     return this.http.get(`${this.baseURL}/search.pl`, {
       params: {
         json: true,
@@ -27,7 +22,7 @@ export class ApiService {
       }
     });
   }
-  public product(id: string): Observable<ProductData> {
+  public product(id: string): Observable<ProductData> {   //questo lo prende(getProduct da porta)
     return this.http.get<ProductData>(`${this.baseURL}/api/v0/product/${id}`, {});
   }
 }

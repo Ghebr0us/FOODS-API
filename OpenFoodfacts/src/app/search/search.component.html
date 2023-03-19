@@ -1,12 +1,10 @@
-<div class="container py-5">
-  <div class="pb-5">
-    <input type="text" #newquery>
-    <button (click)="submit(newquery)">Search</button>
-  </div>
-  <div *ngIf="item">
-    <ul>
-      <li *ngFor="let it of item.products"><app-product [item]="it"></app-product></li>
-    </ul>
-  </div>
+<input type="text" #newquery>
+<button (click)="submit(newquery)">Search</button>
 
+<div *ngIf="item">
+  <ul>
+    <li *ngFor="let it of item.products">
+      <app-product [item]="it"></app-product>
+    </li>
+  </ul>
 </div>
